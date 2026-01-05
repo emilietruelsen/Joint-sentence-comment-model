@@ -1,2 +1,17 @@
 # Joint-sentence-comment-model
-This repository contains the necessary code to complete both the pure-comment and the joint comment-sentence model. Given ethical and legal consideration, the manually-annotated Reddit data used for fine-tuning cannot be made available.
+Requires: > Python.3.10
+
+Dependencies:
+- numpy
+- pandas
+- math
+- dataclasses
+- torch
+- sklearn
+- transformers
+
+To run the pure-comment model:
+ALPHA_SENTENCE_LOSS = 0  
+
+To run the joint comment-sentence model:
+ALPHA_SENTENCE_LOSS = 1
