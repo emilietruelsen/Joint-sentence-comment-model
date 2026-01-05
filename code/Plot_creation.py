@@ -62,8 +62,7 @@ plt.title("BERT: Accuracy over 30 Epochs (95% CI)")
 plt.legend(title="Method")
 plt.tight_layout()
 plt.ylim(0.69,0.9)
-images_dir = '/content/drive/MyDrive'
-plt.savefig(f"{images_dir}/BERT.png")
+plt.savefig("BERT.png")
 plt.show()
 
 # Figure 2
@@ -90,7 +89,7 @@ plt.title("RoBERTa: Accuracy over 30 Epochs (95% CI)")
 plt.legend(title="Method")
 plt.tight_layout()
 plt.ylim(0.69,0.9)
-plt.savefig(f"{images_dir}/RoBERTa.png")
+plt.savefig("RoBERTa.png")
 plt.show()
 
 bertweet = summary[summary["Model"] == "BERTweet"]
@@ -114,5 +113,5 @@ plt.title("BERTweet: Accuracy over 30 Epochs (95% CI)")
 plt.legend(title="Method")
 plt.tight_layout()
 plt.ylim(0.69,0.9)
-plt.savefig(f"{images_dir}/BERTweet.png")
+plt.savefig("BERTweet.png")
 plt.show()
