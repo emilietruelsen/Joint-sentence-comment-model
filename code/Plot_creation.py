@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("Eval_epoch.csv")
+df = pd.read_csv("data/Eval_epoch.csv")
 # Dataset a model-method-epoch-seed combination per row with the following variables:
 # - Model = ["BERT", "RoBERTa", "BERTweet"]
 # - Epoch = 1:30
