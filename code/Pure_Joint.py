@@ -20,12 +20,12 @@ from transformers import (
 
 from sklearn.model_selection import train_test_split
 
-comment_df = pd.read_csv("comments.csv", encoding='latin-1')
+comment_df = pd.read_csv("data/comments.csv", encoding='latin-1')
 #This dataset contains the following key variables:
 #      - comment_id
 #      - comment
 #      - incivility
-sentence_df = pd.read_csv("sentence.csv", encoding='latin-1')
+sentence_df = pd.read_csv("data/sentence.csv", encoding='latin-1')
 #This dataset contains the following key variables:
 #      - comment_id
 #      - sentence_id
