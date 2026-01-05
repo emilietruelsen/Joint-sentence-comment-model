@@ -20,15 +20,12 @@ from transformers import (
 
 from sklearn.model_selection import train_test_split
 
-#Code is run in Google Colab
-from google.colab import drive
-drive.mount('/content/drive')
-comment_df = pd.read_csv("/content/drive/MyDrive/comments.csv", encoding='latin-1')
+comment_df = pd.read_csv("comments.csv", encoding='latin-1')
 #This dataset contains the following key variables:
 #      - comment_id
 #      - comment
 #      - incivility
-sentence_df = pd.read_csv("/content/drive/MyDrive/sentence.csv", encoding='latin-1')
+sentence_df = pd.read_csv("sentence.csv", encoding='latin-1')
 #This dataset contains the following key variables:
 #      - comment_id
 #      - sentence_id
