@@ -62,6 +62,41 @@ plt.title("BERT: Accuracy over 30 Epochs (95% CI)")
 plt.legend(title="Method")
 plt.tight_layout()
 plt.ylim(0.69,0.9)
+
+# annotate: Pure comment => 0.8537, epoch 28
+# annotate: Pure comment => 0.8427, epoch 30
+
+pure = bert[bert["which"] == "Pure comment"].sort_values("Epoch")
+
+E = 28
+y28 = pure.loc[pure["Epoch"].eq(E), "mean"].iloc[0]  
+
+plt.annotate(
+    f"E={E}, A={y28:.4f}",
+    xy=(E, y28),              
+    xycoords="data",
+    xytext=(42, -27),           
+    textcoords="offset points",
+    arrowprops=dict(arrowstyle="->", lw=1),
+    ha="right",
+    va="bottom",
+)
+
+joint = bert[bert["which"] == "Joint sentence-comment"].sort_values("Epoch")
+
+E = 21
+y21 = joint.loc[joint["Epoch"].eq(E), "mean"].iloc[0]  
+
+plt.annotate(
+    f"E={E}, A={y21:.4f}",
+    xy=(E, y21),              
+    xycoords="data",
+    xytext=(42, 17),         
+    textcoords="offset points",
+    arrowprops=dict(arrowstyle="->", lw=1),
+    ha="right",
+    va="bottom",
+)
 plt.savefig("BERT.png")
 plt.show()
 
@@ -89,9 +124,47 @@ plt.title("RoBERTa: Accuracy over 30 Epochs (95% CI)")
 plt.legend(title="Method")
 plt.tight_layout()
 plt.ylim(0.69,0.9)
+
+# annotate: Pure => 0.8678, epoch 27
+# annotate: Joint => 0.8763, epoch 21
+
+pure = roberta[roberta["which"] == "Pure comment"].sort_values("Epoch")
+
+E = 27
+y27 = pure.loc[pure["Epoch"].eq(E), "mean"].iloc[0] 
+
+plt.annotate(
+    f"E={E}, A={y27:.4f}",
+    xy=(E, y27),              
+    xycoords="data",
+    xytext=(42, -27),            
+    textcoords="offset points",
+    arrowprops=dict(arrowstyle="->", lw=1),
+    ha="right",
+    va="bottom",
+)
+
+joint = roberta[roberta["which"] == "Joint sentence-comment"].sort_values("Epoch")
+
+E = 21
+y21 = joint.loc[joint["Epoch"].eq(E), "mean"].iloc[0]  # mean accuracy at epoch 30
+
+plt.annotate(
+    f"E={E}, A={y21:.4f}",
+    xy=(E, y21),          
+    xycoords="data",
+    xytext=(42, 17),          
+    textcoords="offset points",
+    arrowprops=dict(arrowstyle="->", lw=1),
+    ha="right",
+    va="bottom",
+)
+
+
 plt.savefig("RoBERTa.png")
 plt.show()
 
+# Figure 3
 bertweet = summary[summary["Model"] == "BERTweet"]
 plt.figure(figsize=(10, 6))
 
@@ -113,5 +186,40 @@ plt.title("BERTweet: Accuracy over 30 Epochs (95% CI)")
 plt.legend(title="Method")
 plt.tight_layout()
 plt.ylim(0.69,0.9)
+
+# annotate: Pure => 0.8729, epoch 30
+# annotate: Joint => 0.8810, epoch 29
+
+pure = bertweet[bertweet["which"] == "Pure comment"].sort_values("Epoch")
+
+E = 30
+y30 = pure.loc[pure["Epoch"].eq(E), "mean"].iloc[0] 
+
+plt.annotate(
+    f"E={E}, A={y30:.4f}",
+    xy=(E, y30),             
+    xycoords="data",
+    xytext=(22, -30),    
+    textcoords="offset points",
+    arrowprops=dict(arrowstyle="->", lw=1),
+    ha="right",
+    va="bottom",
+)
+
+joint = bertweet[bertweet["which"] == "Joint sentence-comment"].sort_values("Epoch")
+
+E = 29
+y29 = joint.loc[joint["Epoch"].eq(E), "mean"].iloc[0]
+
+plt.annotate(
+    f"E={E}, A={y29:.4f}",
+    xy=(E, y29),                
+    xycoords="data",
+    xytext=(42, 17),          
+    textcoords="offset points",
+    arrowprops=dict(arrowstyle="->", lw=1),
+    ha="right",
+    va="bottom",
+)
 plt.savefig("BERTweet.png")
 plt.show()
