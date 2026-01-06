@@ -63,19 +63,19 @@ plt.legend(title="Method", fontsize=16, title_fontsize=18, loc="lower left")
 plt.tight_layout()
 plt.ylim(0.69,0.9)
 
-# annotate: Pure comment => 0.8537, epoch 28
 # annotate: Pure comment => 0.8427, epoch 30
+# annotate: Joint Sentence-comment => 0.8427, epoch 30
 
 pure = bert[bert["which"] == "Pure comment"].sort_values("Epoch")
 
-E = 28
-y28 = pure.loc[pure["Epoch"].eq(E), "mean"].iloc[0]  
+E = 30
+y30 = pure.loc[pure["Epoch"].eq(E), "mean"].iloc[0]
 
 plt.annotate(
-    f"E={E}, A={y28:.4f}",
-    xy=(E, y28),        
+    f"E={E}, A={y30:.4f}",
+    xy=(E, y30),
     xycoords="data",
-    xytext=(42, -40),          
+    xytext=(42, -40),
     textcoords="offset points",
     arrowprops=dict(arrowstyle="->", lw=2),
     ha="right",
@@ -85,14 +85,14 @@ plt.annotate(
 
 joint = bert[bert["which"] == "Joint sentence-comment"].sort_values("Epoch")
 
-E = 21
-y21 = joint.loc[joint["Epoch"].eq(E), "mean"].iloc[0] 
+E = 28
+y28 = joint.loc[joint["Epoch"].eq(E), "mean"].iloc[0]
 
 plt.annotate(
-    f"E={E}, A={y21:.4f}",
-    xy=(E, y21),        
+    f"E={E}, A={y28:.4f}",
+    xy=(E, y28),
     xycoords="data",
-    xytext=(66, 25),           
+    xytext=(66, 25),
     textcoords="offset points",
     arrowprops=dict(arrowstyle="->", lw=2),
     ha="right",
