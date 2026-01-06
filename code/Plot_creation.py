@@ -75,7 +75,7 @@ plt.annotate(
     f"E={E}, A={y30:.4f}",
     xy=(E, y30),
     xycoords="data",
-    xytext=(42, -40),
+    xytext=(25, -40),
     textcoords="offset points",
     arrowprops=dict(arrowstyle="->", lw=2),
     ha="right",
