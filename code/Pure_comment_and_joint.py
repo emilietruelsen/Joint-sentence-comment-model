@@ -761,7 +761,7 @@ def train_model(
 
 #Setting the hyperparameters
 SEEDS = [40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55]
-ALPHA_SENTENCE_LOSS_VALUES = [0,0.1,0.25,0.5,1]
+ALPHA_SENTENCE_LOSS_VALUES = [0,0.1,0.25,0.5,1] #When alpha=0, it recovers the pure comment model
 
 #the following grid corresponds to the best performing hyperparameters for roberta, change as needed
 grid = {
