@@ -14,7 +14,7 @@ Requires: > Python.3.10
 ALPHA_SENTENCE_LOSS = 0  
 
 **To run the joint comment-sentence model**:
-ALPHA_SENTENCE_LOSS = 1
+ALPHA_SENTENCE_LOSS > 0
 
 **Note**: For legal reasons the models can be made public at this time. The annotated data will be made public upon publication of the main article.
 
@@ -22,13 +22,9 @@ ALPHA_SENTENCE_LOSS = 1
 ```text
 .
 ├── code/
-│   └── Plot_creation.py                        # Creation of figures 2, 3, and 4 with Eval_epoch.csv
-│   ├── Pure_joint.py                           # Running pure-comment and joint sentence-comment classification schemes
+│   └── Pure_sentence.py                        # Rinning pure-sentence classification scheme
+│   ├── Pure_comment_and_joint.py               # Running pure-comment and joint sentence-comment classification schemes
 ├── data/
-│   ├── Eval_epoch.csv                          # Evaluation metrics over epochs (on validation data)
-│   ├── test_metrics                            # Evaluation metrics of best performing model on held-out test set
-├── plots/
-│   ├── BERT.png                                # Figure 2
-│   ├── RoBERTa.png                             # Figure 3
-│   └── BERTweet.png                            # Figure 4
+│   ├── test_metrics_pure_comment_joint.csv     # Test metrics of best performing model on a held-out test set for the pure-comment and joint sentence-comment classification schemes
+│   ├── test_metrics_pure_sentence.csv          # Test metrics of best performing model on a held-out test set for the pure-sentence classification scheme
 └── README.md
